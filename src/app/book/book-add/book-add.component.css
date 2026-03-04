@@ -1,0 +1,97 @@
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+.form-eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #b0b0b0;
+  margin-bottom: 6px;
+}
+.form-title {
+  font-size: 2rem;
+  font-weight: normal;
+  color: #1a1a1a;
+}
+.back-link {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6b6b6b;
+  text-decoration: none;
+  padding-bottom: 6px;
+  transition: color 0.2s;
+}
+.back-link:hover { color: #1a1a1a; }
+.divider { height: 1px; background: #e2dfd9; margin-bottom: 40px; }
+.form-body { max-width: 560px; }
+.field-group { margin-bottom: 28px; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.field-label {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #6b6b6b;
+  margin-bottom: 10px;
+}
+.field-input {
+  width: 100%;
+  padding: 11px 0;
+  border: none;
+  border-bottom: 1px solid #e2dfd9;
+  border-radius: 0;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  background: transparent;
+  font-family: 'Georgia', serif;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+.field-input:focus { border-bottom-color: #1a1a1a; }
+.field-input::placeholder { color: #c8c5bf; }
+.field-select { cursor: pointer; appearance: none; }
+.field-textarea { resize: none; line-height: 1.6; }
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid #e2dfd9;
+}
+.btn-submit {
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background: #1a1a1a;
+  color: #faf9f7;
+  border: none;
+  padding: 13px 28px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  font-family: 'Georgia', serif;
+}
+.btn-submit:hover:not(:disabled) { opacity: 0.75; }
+.btn-submit:disabled { opacity: 0.35; cursor: not-allowed; }
+.btn-cancel {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #b0b0b0;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.btn-cancel:hover { color: #1a1a1a; }
+.alert-error {
+  border-left: 2px solid #c0392b;
+  padding: 12px 16px;
+  color: #c0392b;
+  font-size: 0.85rem;
+  margin-bottom: 32px;
+  background: #fdf8f8;
+}

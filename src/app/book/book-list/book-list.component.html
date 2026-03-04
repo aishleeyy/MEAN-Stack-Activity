@@ -1,0 +1,43 @@
+<div class="list-header">
+  <div class="list-title-group">
+    <p class="list-eyebrow">Collection</p>
+    <h1 class="list-title">All Books</h1>
+  </div>
+  <span class="list-count">{{ books.length }} title{{ books.length !== 1 ? 's' : '' }}</span>
+</div>
+
+<div class="divider"></div>
+
+<div *ngIf="loading" class="state-msg">Loading collection...</div>
+<div *ngIf="error" class="alert-error">{{ error }}</div>
+<div *ngIf="successMsg" class="alert-success">{{ successMsg }}</div>
+
+<div *ngIf="!loading && books.length === 0" class="empty-state">
+  <p>The collection is empty.</p>
+  <a routerLink="/books/add" class="empty-link">Add your first book →</a>
+</div>
+
+<div class="book-table" *ngIf="!loading && books.length > 0">
+  <div class="table-head">
+    <span>Title</span>
+    <span>Author</span>
+    <span>Genre</span>
+    <span>Year</span>
+    <span></span>
+  </div>
+  <div class="table-row" *ngFor="let book of books">
+    <div class="col-title">
+      <span class="title-text">{{ book.title }}</span>
+      <p class="desc-preview">{{ book.description }}</p>
+    </div>
+    <div class="col-author">{{ book.author }}</div>
+    <div class="col-genre">
+      <span class="genre-pill">{{ book.genre || '—' }}</span>
+    </div>
+    <div class="col-year">{{ book.year }}</div>
+    <div class="col-actions">
+      <a [routerLink]="['/books/edit', book._id]" class="action-edit">Edit</a>
+      <button (click)="deleteBook(book._id!)" class="action-delete">Remove</button>
+    </div>
+  </div>
+</div>

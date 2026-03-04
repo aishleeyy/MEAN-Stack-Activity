@@ -1,0 +1,63 @@
+<div class="form-header">
+  <div>
+    <p class="form-eyebrow">Collection</p>
+    <h1 class="form-title">Add New Book</h1>
+  </div>
+  <a routerLink="/books" class="back-link">← Back</a>
+</div>
+
+<div class="divider"></div>
+
+<div *ngIf="error" class="alert-error">{{ error }}</div>
+
+<form (ngSubmit)="onSubmit()" #bookForm="ngForm" class="form-body">
+
+  <div class="field-group">
+    <label class="field-label">Title</label>
+    <input name="title" type="text" [(ngModel)]="book.title" required
+      placeholder="Enter book title" class="field-input" />
+  </div>
+
+  <div class="field-row">
+    <div class="field-group">
+      <label class="field-label">Author</label>
+      <input name="author" type="text" [(ngModel)]="book.author" required
+        placeholder="Author name" class="field-input" />
+    </div>
+    <div class="field-group">
+      <label class="field-label">Year</label>
+      <input name="year" type="number" [(ngModel)]="book.year" required
+        placeholder="e.g. 2023" class="field-input" />
+    </div>
+  </div>
+
+  <div class="field-group">
+    <label class="field-label">Genre</label>
+    <select name="genre" [(ngModel)]="book.genre" class="field-input field-select">
+      <option value="">Select genre</option>
+      <option>Fiction</option>
+      <option>Non-Fiction</option>
+      <option>Science Fiction</option>
+      <option>Fantasy</option>
+      <option>Mystery</option>
+      <option>Biography</option>
+      <option>History</option>
+      <option>Technology</option>
+      <option>Other</option>
+    </select>
+  </div>
+
+  <div class="field-group">
+    <label class="field-label">Description</label>
+    <textarea name="description" [(ngModel)]="book.description"
+      placeholder="A brief description of the book" rows="5" class="field-input field-textarea"></textarea>
+  </div>
+
+  <div class="form-actions">
+    <button type="submit" [disabled]="!bookForm.valid || submitting" class="btn-submit">
+      {{ submitting ? 'Saving...' : 'Save Book' }}
+    </button>
+    <a routerLink="/books" class="btn-cancel">Cancel</a>
+  </div>
+
+</form>
